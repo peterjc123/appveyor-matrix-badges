@@ -1,41 +1,24 @@
-# Travis Matrix Build Badges
+# Appveyor Matrix Build Badges
 
-A small web server to produce a badge of the builds statuses in a Travis Matrix build.
+A small web server to produce a badge per job in an Appveyor build.
+Note: inspired by Travis-matrix-badges (https://github.com/bjfish/travis-matrix-badges) which provides similar functionality for Travis builds.
 
 ## URL Format
 
 Replace the following parameters
 ```
-https://travis-matrix-badges.herokuapp.com/repos/${repo_owner}/${repo_name}/branches/${branch}
+https://appveyor-matrix-badges.herokuapp.com/repos/{accountName}/{projectSlug}/branch/{buildBranch}/{jobNumber}
 ```
-
-### Static Example
-
-[![Build Status](http://i.imgur.com/4oSnGEd.png)](https://travis-ci.org/bjfish/grails-ci-build-matrix-example)
 
 ### Live Example
 
-```
-[![Build Status](https://travis-matrix-badges.herokuapp.com/repos/bjfish/grails-ci-build-matrix-example/branches/master)](https://travis-ci.org/bjfish/grails-ci-build-matrix-example)
-```
+https://ci.appveyor.com/api/projects/tzachshabtay/MonoAGS/branch/master
 
-[![Build Status](https://travis-matrix-badges.herokuapp.com/repos/bjfish/grails-ci-build-matrix-example/branches/master)](https://travis-ci.org/bjfish/grails-ci-build-matrix-example)
+| Build1            | Build2            | Build3            |
+|-------------------|-------------------|-------------------|
+| [![Build1][1]][4] | [![Build2][2]][4] | [![Build3][3]][4] |
 
-### Badge-Per-Job
-
-Another option would be to specify a badge per job:
-```
-https://travis-matrix-badges.herokuapp.com/repos/${repo_owner}/${repo_name}/branches/${branch}/${job_number}
-```
-
-Live example:
-
-| Build1            | Build2            | Build3            | Build4            |
-|-------------------|-------------------|-------------------|-------------------|
-| [![Build1][1]][5] | [![Build2][2]][5] | [![Build3][3]][5] | [![Build4][4]][5] |
-
-[1]: https://travis-matrix-badges.herokuapp.com/repos/bjfish/grails-ci-build-matrix-example/branches/master/1
-[2]: https://travis-matrix-badges.herokuapp.com/repos/bjfish/grails-ci-build-matrix-example/branches/master/2
-[3]: https://travis-matrix-badges.herokuapp.com/repos/bjfish/grails-ci-build-matrix-example/branches/master/3
-[4]: https://travis-matrix-badges.herokuapp.com/repos/bjfish/grails-ci-build-matrix-example/branches/master/4
-[5]: https://travis-ci.org/bjfish/grails-ci-build-matrix-example
+[1]: https://appveyor-matrix-badges.herokuapp.com/repos/tzachshabtay/MonoAGS/branch/master/1
+[2]: https://appveyor-matrix-badges.herokuapp.com/repos/tzachshabtay/MonoAGS/branch/master/2
+[3]: https://appveyor-matrix-badges.herokuapp.com/repos/tzachshabtay/MonoAGS/branch/master/3
+[4]: https://ci.appveyor.com/project/tzachshabtay/monoags
