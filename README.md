@@ -12,8 +12,6 @@ https://appveyor-matrix-badges.herokuapp.com/repos/{accountName}/{projectSlug}/b
 
 ### Live Example
 
-https://ci.appveyor.com/api/projects/tzachshabtay/MonoAGS/branch/master
-
 | Build1            | Build2            | Build3            |
 |-------------------|-------------------|-------------------|
 | [![Build1][1]][4] | [![Build2][2]][4] | [![Build3][3]][4] |
