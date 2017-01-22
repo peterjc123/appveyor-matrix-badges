@@ -72,6 +72,7 @@ app.get("/repos/(*)", function (req, res) {
 
 function redirect(url, state, res) {
   res.header("ETag", state);
+  url = url + "?maxAge=5";
   res.redirect(url);
   //request.get(url, function(err, response, body) {
   //  if (err) res.send(err);
