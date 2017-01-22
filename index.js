@@ -45,6 +45,7 @@ app.get("/repos/(*)", function (req, res) {
         if (requestedJobNumber != currentJobNumber) return;
         foundRequestedJobNumber = true;
         res.header("Cache-Control", "no-cache");
+        res.header("Expires", "Thu, 01 Jan 1970 00:00:00 GMT");
         if (state == "success") {
           redirect("https://img.shields.io/badge/build-passing-brightgreen.svg", state, res)
         }
