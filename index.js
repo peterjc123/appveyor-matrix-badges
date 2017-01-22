@@ -72,10 +72,11 @@ app.get("/repos/(*)", function (req, res) {
 
 function redirect(url, state, res) {
   res.header("ETag", state);
-  request.get(url, function(err, response, body) {
-    if (err) res.send(err);
-    else res.send(body);
-  });
+  res.redirect(url);
+  //request.get(url, function(err, response, body) {
+  //  if (err) res.send(err);
+  //  else res.send(body);
+  //});
 }
 
 app.listen(app.get('port'), function () {
