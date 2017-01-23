@@ -44,8 +44,6 @@ app.get("/repos/(*)", function (req, res) {
         var state = job.status;
         if (requestedJobNumber != currentJobNumber) return;
         foundRequestedJobNumber = true;
-        res.header("Cache-Control", "no-cache");
-        res.header("Expires", "Thu, 01 Jan 1970 00:00:00 GMT");
         if (state == "success") {
           redirect("https://img.shields.io/badge/build-passing-brightgreen.svg", state, res)
         }
@@ -72,13 +70,17 @@ app.get("/repos/(*)", function (req, res) {
 });
 
 function redirect(url, state, res) {
-  res.header("ETag", state);
-  url = url + "?max-age=5";
-  res.redirect(url);
-  //request.get(url, function(err, response, body) {
-  //  if (err) res.send(err);
-  //  else res.send(body);
-  //});
+  request.get(url, function(err, response, body) {
+    if (err) {
+      res.status(500).send(err);
+      return;
+    }
+    res.header("Cache-Control", "no-cache");
+    res.header("Expires", "Thu, 01 Jan 1970 00:00:00 GMT");
+    res.header("ETag", state);
+    res.header("content-type", "image/svg+xml;charset=utf-8");
+    res.status(response.statusCode).send(body);
+  });
 }
 
 app.listen(app.get('port'), function () {
