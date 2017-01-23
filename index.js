@@ -75,7 +75,8 @@ function redirect(url, state, res) {
       res.status(500).send(err);
       return;
     }
-    res.header("Cache-Control", "no-cache");
+    res.header("Cache-Control", "no-cache, must-revalidate");
+    res.header("Pragma", "no-cache");
     res.header("Expires", "Thu, 01 Jan 1970 00:00:00 GMT");
     res.header("ETag", state);
     res.header("content-type", "image/svg+xml;charset=utf-8");
