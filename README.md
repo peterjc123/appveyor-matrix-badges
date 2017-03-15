@@ -14,9 +14,9 @@ https://appveyor-matrix-badges.herokuapp.com/repos/{accountName}/{projectSlug}/b
 
 | Build1            | Build2            | Build3            |
 |-------------------|-------------------|-------------------|
-| [![Build1][1]][4] | [![Build2][2]][4] | [![Build3][3]][4] |
+| [![build1][]][build-link] | [![build2][]][build-link] | [![build3][]][build-link] |
 
-[1]: https://appveyor-matrix-badges.herokuapp.com/repos/tzachshabtay/MonoAGS/branch/master/1
-[2]: https://appveyor-matrix-badges.herokuapp.com/repos/tzachshabtay/MonoAGS/branch/master/2
-[3]: https://appveyor-matrix-badges.herokuapp.com/repos/tzachshabtay/MonoAGS/branch/master/3
-[4]: https://ci.appveyor.com/project/tzachshabtay/monoags
+[build1]: https://appveyor-matrix-badges.herokuapp.com/repos/tzachshabtay/MonoAGS/branch/master/1
+[build2]: https://appveyor-matrix-badges.herokuapp.com/repos/tzachshabtay/MonoAGS/branch/master/2
+[build3]: https://appveyor-matrix-badges.herokuapp.com/repos/tzachshabtay/MonoAGS/branch/master/3
+[build-link]: https://ci.appveyor.com/project/tzachshabtay/monoags
